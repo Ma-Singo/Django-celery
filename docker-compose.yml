@@ -1,0 +1,14 @@
+services: 
+    # redis
+    # django
+    django:
+      container_name: django
+      build: 
+        context: .
+      command: python3 manage.py runserver 0.0.0.0:8000
+      volumes:
+        - .:/usr/src/app/
+      ports:
+          - 8001:8000
+
+    # celery
